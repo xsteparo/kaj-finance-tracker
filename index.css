@@ -1,0 +1,271 @@
+/*
+:root je pseudotřída, která se vztahuje na kořenový element dokumentu.
+V tomto případě definujeme vlastní CSS proměnnou --box-shadow, kterou pak můžeme používat v rámci našeho dokumentu.
+*/
+:root {
+    --box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+/*
+Univerzální selektor (*) se vztahuje na všechny elementy v dokumentu.
+Zde nastavujeme box-sizing na border-box pro všechny elementy, což znamená, že padding a okraje budou součástí celkové šířky a výšky elementu.
+*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #71ffc4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+header {
+    margin: 30px auto;
+    width: 350px;
+    text-align: center;
+}
+
+.balance-container {
+    text-align: center;
+}
+
+main {
+    margin: 30px auto;
+    width: 350px;
+}
+
+h1 {
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+h3 {
+    border-bottom: 1px solid #6e92ee;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+}
+
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/*
+Nastavení stylu pro kontejner zobrazující příjmy a výdaje (inc-expense-container), který je v rámci elementu section.
+*/
+
+section .inc-expense-container {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+/*
+Nastavení stylu pro každý článek v rámci kontejneru zobrazující příjmy a výdaje.
+*/
+section .inc-expense-container > article {
+    flex: 1;
+    text-align: center;
+}
+/*
+Nastavení stylu pro první článek v rámci kontejneru zobrazující příjmy a výdaje.
+*/
+section .inc-expense-container > article:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+.money {
+    font-size: 2px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money-plus {
+    color: #2ecc71;
+}
+
+.money-minus {
+    color: #ff0000;
+}
+
+label {
+    display: inline-block;
+    font-size: 10px;
+    margin: 10px 0;
+}
+/*
+Nastavení stylu pro textové a číselné vstupy.
+*/
+input[type="text"], input[type="number"] {
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #ffde66;
+    box-shadow: var(--box-shadow);
+    color: white;
+    border: none;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 7px;
+    padding: 10px;
+    width: 100%;
+}
+/*
+Nastavení stylu pro tlačítka při focus stavu.
+*/
+.btn:focus, .delete-btn:focus {
+    outline: 0;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: lemonchiffon;
+    box-shadow: var(--box-shadow);
+    color: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+}
+
+.list li:hover {
+    transform: scale(1.03);
+}
+
+.list li.plus {
+    border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+    border-right: 5px solid #ff0000;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: orangered;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+/*
+Definice animace slideOutLeft, která překládá element z pravé strany mimo obrazovku, zatímco jeho průhlednost se snižuje.
+*/
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+/*
+Definice animace remove3d, která rotuje element kolem osy Y, zatímco jeho průhlednost se snižuje.
+*/
+@keyframes remove3d {
+    0% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateY(1turn);
+        opacity: 0;
+    }
+}
+
+#videoControls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.controlButton {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display as inline-block */
+    font-size: 16px; /* Change text size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    transition-duration: 0.4s; /* Add transition (optional) */
+}
+.controlButton:hover {
+    background-color: white;
+    color: black;
+}
+#videoContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Позволяет контейнеру занимать всю доступную ширину */
+}
+/*
+Přizpůsobení stylů pro zařízení s maximální šířkou obrazovky 840px (například pro mobilní zařízení).
+*/
+@media screen and (max-device-width: 840px)  {
+    main {
+        width: 95%;
+    }
+
+    header {
+        width: 95%;
+        margin: 15px auto;
+    }
+
+    body {
+        padding: 0 0%;
+    }
+
+    h1, h3, h4 {
+        font-size: 16px;
+    }
+    .delete-btn {
+        font-size: 14px;
+        padding: 1px 3px;
+    }
+
+    .list{
+        padding: 5%;
+    }
+}
