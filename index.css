@@ -20,7 +20,7 @@ Zde nastavujeme box-sizing na border-box pro všechny elementy, což znamená, �
 
 
 body {
-    background-color: #71ffc4;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,6 +40,20 @@ header {
     text-align: center;
 }
 
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #3c3c3c;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 2px solid #3c3c3c;
+    border-bottom: 2px solid #3c3c3c;
+}
+
+
+
 main {
     margin: 30px auto;
     width: 350px;
@@ -48,17 +62,28 @@ main {
 h1 {
     letter-spacing: 1px;
     margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #3c3c3c;
+    text-align: center;
 }
 
 h3 {
     border-bottom: 1px solid #6e92ee;
     padding-bottom: 10px;
     margin: 40px 0 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #3c3c3c;
+    text-align: center;
 }
 
 h4 {
     margin: 0;
     text-transform: uppercase;
+    font-size: 16px;
 }
 
 /*
@@ -72,6 +97,7 @@ section .inc-expense-container {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+    border-radius: 5px;
 }
 /*
 Nastavení stylu pro každý článek v rámci kontejneru zobrazující příjmy a výdaje.
@@ -111,7 +137,7 @@ Nastavení stylu pro textové a číselné vstupy.
 */
 input[type="text"], input[type="number"] {
     border: 1px solid #dedede;
-    border-radius: 3px;
+    border-radius: 10px;
     display: block;
     font-size: 16px;
     padding: 10px;
@@ -120,15 +146,20 @@ input[type="text"], input[type="number"] {
 
 .btn {
     cursor: pointer;
-    background-color: #ffde66;
-    box-shadow: var(--box-shadow);
-    color: white;
+    background-color: #008CBA; /* Blue background */
     border: none;
+    color: white; /* White text */
     display: block;
     font-size: 16px;
     margin: 10px 0 7px;
     padding: 10px;
     width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s; /* Add transition */
+}
+
+.btn:hover {
+    background-color: #00688B; /* Darken background on hover */
 }
 /*
 Nastavení stylu pro tlačítka při focus stavu.
@@ -141,6 +172,7 @@ Nastavení stylu pro tlačítka při focus stavu.
     list-style-type: none;
     padding: 0;
     margin-bottom: 40px;
+
 }
 
 .list li {
@@ -161,10 +193,12 @@ Nastavení stylu pro tlačítka při focus stavu.
 
 .list li.plus {
     border-right: 5px solid #2ecc71;
+    border-radius: 5px;
 }
 
 .list li.minus {
     border-right: 5px solid #ff0000;
+    border-radius: 5px;
 }
 
 .delete-btn {
@@ -230,6 +264,7 @@ Definice animace remove3d, která rotuje element kolem osy Y, zatímco jeho prů
     margin: 4px 2px; /* Some margin */
     cursor: pointer; /* Add a mouse pointer on hover */
     transition-duration: 0.4s; /* Add transition (optional) */
+    border-radius: 5px;
 }
 .controlButton:hover {
     background-color: white;

@@ -24,6 +24,7 @@
 
     <!-- Income and Expense section -->
     <section>
+        <h3>Total:</h3>
         <div class="inc-expense-container">
             <!-- Income section -->
             <article>
@@ -51,8 +52,8 @@
     <!-- New transaction input form -->
     <section>
         <h3>Add new transaction</h3>
-        <h2 style="color: red; font-weight: bold;font-size: 9px">Warning: A plus sign (+) indicates income, a minus sign (-) indicates expense.
-        </h2>
+        <span style="color: red; font-weight: bold;font-size: 9px">Warning: A plus sign (+) indicates income, a minus sign (-) indicates expense.
+        </span>
         <form id="form">
             <div class="form-control">
                 <label for="text">Text</label>
@@ -73,9 +74,7 @@
     </section>
 
     <!-- Chart section to visualize the transactions -->
-    <section>
-        <canvas id="myChart"></canvas>
-    </section>
+    <canvas id="myChart"></canvas>
 
     <!-- Video section -->
     <div id="videoContainer">
